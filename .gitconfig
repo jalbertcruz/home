@@ -1,0 +1,34 @@
+[color]
+	ui = true
+[user]
+	name = José Albert Cruz Almaguer
+	email = jalbertcruz@gmail.com
+[push]
+	default = current
+
+[merge]
+        tool = extMerge
+
+[mergetool "extMerge"]
+        cmd = extMerge $BASE $LOCAL $REMOTE $MERGED
+        trustExitCode = false
+
+#[diff]
+#        external = extDiff
+	submodule = log
+
+[core]
+	editor = emacs
+	autocrlf = input
+	whitespace = trailing-space,tab-in-indent
+
+[pull]
+	rebase = true
+
+[branch]
+	autoSetupRebase = always
+	
+[status]
+	submoduleSummary = true
+[gc]
+	autoDetach = false
