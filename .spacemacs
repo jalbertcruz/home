@@ -42,7 +42,7 @@ values."
 	emacs-lisp
 
 	clojure
-	perl
+	perl-mode
 	git
 	markdown
 	python
@@ -304,6 +304,10 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+    (add-to-list 'auto-mode-alist '("\\.pm6\\'" . perl-mode))
+    (add-to-list 'auto-mode-alist '("\\.p6\\'" . perl-mode))
+
   )
 
 (defun dotspacemacs/user-config ()
