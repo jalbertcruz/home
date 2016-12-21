@@ -1,34 +1,149 @@
 [color]
-	ui = true
+    ui = auto
 [user]
-	name = José Albert Cruz Almaguer
-	email = jalbertcruz@gmail.com
+    name = José Albert Cruz Almaguer
+    email = jalbertcruz@gmail.com
 [push]
-	default = current
+    default = matching
+
+[fetch]
+    prune=1
 
 [merge]
-        tool = extMerge
+    tool = smartsynchronize
+    ff    = false
+    #conflictstyle = diff3
 
-[mergetool "extMerge"]
-        cmd = extMerge $BASE $LOCAL $REMOTE $MERGED
-        trustExitCode = false
+[mergetool "smartsynchronize"]
+    cmd = ~/appslnx/git/smartsynchronize/bin/smartsynchronize.sh "$LOCAL" "$REMOTE" "$MERGED"
+    trustExitCode = false
 
-#[diff]
+[diff]
 #        external = extDiff
-	submodule = log
+    submodule = log
 
 [core]
-	editor = emacs
-	autocrlf = input
-	whitespace = trailing-space,tab-in-indent
+    editor = emacs
+    autocrlf = input
+    whitespace = trailing-space,tab-in-indent,tabwidth=4
 
 [pull]
-	rebase = true
+    #rebase = true
+    rebase = preserve
 
 [branch]
-	autoSetupRebase = always
+    autoSetupRebase = always
 	
 [status]
-	submoduleSummary = true
+    submoduleSummary = true
 [gc]
-	autoDetach = false
+    autoDetach = false
+
+[help]
+    format = man
+
+[alias]
+    br = branch -a
+    s = status -u -s
+    cl = log --stat -C -2
+    c = commit
+    co = checkout
+    d = diff --color-words
+    dh = diff HEAD
+    dc = diff --staged
+    dw = diff --word-diff
+    dcw = diff --color-words
+    dm = !git diff | mate
+    dv = !git diff | vim
+    who = shortlog -s --
+    ph = push
+    pl = pull
+    lp = log -p
+    lod = log --oneline --decorate
+    lg = log --graph
+
+    lpo = log --pretty=oneline --abbrev-commit --graph --decorate --all
+
+    ld = log --all --graph --decorate --oneline
+
+    l1 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    l2 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    l3 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    sync = !git pull && git push
+    es = !git pull --rebase && git push
+    lf = log --pretty=fuller
+    ignorechanges = update-index --assume-unchanged
+    noticechanges = update-index --no-assume-unchanged
+    gc-ap = gc --aggressive --prune
+    listconf = config --global --list
+    cam = commit -a -m
+    lsm = log -M --stat
+    hse = log --stat -5
+    diffall = diff HEAD
+    logr = log -M
+    logr2 = log --stat -M -2
+    logit = log --stat -M
+    scrub = !git reset --hard && git clean -fd
+    pubdev = !git pub checkout master && git pull && git checkout dev && git rebase master && git checkout master && git merge dev && git wtf
+    pub = push -u origin
+    cs = status
+    rv = remote -v
+    lwr = log --stat -C
+    pur = pull --rebase
+    whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+    orphank = !gitk --all `git reflog | cut -c1-7`&
+    orphanl = !git log --pretty=oneline --abbrev-commit --graph --decorate `git reflog | cut -c1-7`
+    k = !exec gitk --all&
+    testecho1 = !sh -c 'echo with slash: zero=$0 one=$1 two=$2' -
+    # te1 RESULT: with slash: zero=- one=A two=B
+    testecho2 = !sh -c 'echo without slash: zero=$0 one=$1 two=$2'
+    # te2 RESULT: without slash: zero=A one=B two=C
+    st = status
+    l = log --stat -C
+    ll = log --stat -C -3
+    servehere = daemon --verbose --informative-errors --reuseaddr --export-all --base-path=. --enable=receive-pack
+    purgeme = !git clean -fd && git reset --hard
+    prunenow = gc --prune=now
+    ri = rebase --interactive --autosquash
+    lol = log --pretty=oneline --graph --abbrev-commit --all
+    blg = log --graph --decorate --all --abbrev-commit --pretty=oneline
+    slog = log --graph --simplify-by-decoration --all --abbrev-commit --pretty=oneline
+    lgso = log --graph --date=short --pretty=format:'%C(yellow)%h%Creset %cn%x09%cd %s%C(green bold)%d'
+    ro = !git fetch origin && git reset --hard origin/master
+    shorten = "!sh -c 'curl -i http://git.io -F url=$1' -"
+    pushnotes = !sh -c 'git push $1 refs/notes/*' -
+    fetchnotes = !sh -c 'git fetch $1 refs/notes/*:refs/notes/*' -
+    showignored = clean -ndX
+    showignored2 = ls-files --others --ignored --exclude-standard
+    showuntracked = ls-files --others --exclude-standard
+    rmmissing = !git rm $(git ls-files --deleted)
+    mergekeepoursonly = merge -s ours
+    redocommit-index = reset --soft HEAD^
+    redocommit = reset --mixed HEAD^
+    listunstaged = diff --name-status
+    liststaged = diff --name-status --staged
+    listhistory = log --name-status
+    logn = log --oneline --name-only
+    busypeople = shortlog -6
+    busythisweek = shortlog --since=one.week.ago
+
+    #https://git.wiki.kernel.org/index.php?title=Aliases
+    aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
+    abbr = "!sh -c 'git rev-list --all | grep ^$1 | while read commit; do git --no-pager log -n1 --pretty=format:\"%H %ci %an %s%n\" $commit; done' -"
+    oneline ="!_() { $(test $# -eq 0 && echo xargs -L1) git log --no-walk --decorate --oneline \"$@\"; }; _"
+    tips = "!_() { t=$(git rev-list --no-merges --max-count=1 \"$@\"); if test -n \"$t\"; then echo $t; _ \"$@\" ^$t; fi; }; _"
+    empty-tree-sha1 = hash-object -t tree /dev/null
+    whitespaceviolations = "!git diff --check $(git empty-tree-sha1)"
+    patchforthis = "!git diff -p $(git empty-tree-sha1)"
+    tagcontains = git tag -l --contains HEAD
+    cc-cache = "config --global credential.helper 'cache --timeout=300'"
+    cc-off = "config --unset --global credential.helper"
+    logm = log --stat -M
+    logcpy = log --stat -1 -C -C
+    nfjsunpushed = log origin/master..master --oneline
+    rtheirs = !git checkout --theirs ./ && git add . && git rebase --continue
+    logfive = log --graph --pretty=oneline --abbrev-commit --decorate --all -5
+    noderelnotes = git log --graph --pretty=format:'%h%d %s (%an)'
+    configsimplelog = config format.pretty oneline
+    listignored = ls-files --others -i --exclude-standard
+    me = !git config --get user.name && git config --get user.email
