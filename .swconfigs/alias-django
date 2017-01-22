@@ -1,0 +1,4 @@
+alias dmm="python manage.py makemigrations"
+alias dm="python manage.py migrate"
+alias dr="python manage.py runserver"
+alias dcs="python manage.py collectstatic"

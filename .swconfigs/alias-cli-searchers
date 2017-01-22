@@ -1,0 +1,6 @@
+# ack
+#alias ack="ack --ignore-dir=lib --ignore-dir=.idea --ignore-dir=catalog/static/vendor --after-context=2 --before-context=2  --pager=less"
+alias ack="ack --ignore-dir=lib --ignore-dir=.idea --ignore-dir=catalog/static/vendor --pager=less"
+
+# ag
+alias ag="ag --ignore-dir=lib --ignore-dir=.idea --ignore-dir=catalog/static/vendor --pager=less"

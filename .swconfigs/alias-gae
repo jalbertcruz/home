@@ -1,0 +1,9 @@
+
+# GAE
+alias gael="gcloud auth login"
+#alias gaeu="appcfg.py update -A orionmarketplaceqa -V 1 ."
+alias gaeu="gulp deploy --project=marketplaceorionqa-2016 --version=v7"
+
+
+alias gaer="dev_appserver.py --log_level=debug ."
+alias gaerb="dev_appserver.py --log_level=debug ."
