@@ -1,17 +1,21 @@
 [color]
     ui = auto
+
 [user]
     name = José Albert Cruz Almaguer
     email = jalbertcruz@gmail.com
+
 [push]
     default = matching
+    recurseSubmodules = on-demand
 
 [fetch]
     prune=1
+    recurseSubmodules = yes
 
 [merge]
     tool = smartsynchronize
-    ff    = false
+    ff   = false
     #conflictstyle = diff3
 
 [mergetool "smartsynchronize"]
@@ -28,14 +32,15 @@
     whitespace = trailing-space,tab-in-indent,tabwidth=4
 
 [pull]
-    #rebase = true
-    rebase = preserve
+    rebase = true
+    #rebase = preserve
 
 [branch]
     autoSetupRebase = always
 	
 [status]
     submoduleSummary = true
+
 [gc]
     autoDetach = false
 
@@ -77,6 +82,8 @@
     gc-ap = gc --aggressive --prune
     listconf = config --global --list
     cam = commit -a -m
+    cm = commit -m
+    can = commit --amend --no-edit
     lsm = log -M --stat
     hse = log --stat -5
     diffall = diff HEAD
@@ -147,3 +154,5 @@
     configsimplelog = config format.pretty oneline
     listignored = ls-files --others -i --exclude-standard
     me = !git config --get user.name && git config --get user.email
+
+    sps = !git stash && git pull && git stash pop
