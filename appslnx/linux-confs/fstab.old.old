@@ -1,0 +1,7 @@
+UUID=e08a0e75-dd4f-4d20-baa0-7e172ed39983 swap                 swap       defaults              0 0
+UUID=893a01b5-89ee-45e7-a359-4b5335cbc7f7 /                    ext4       noatime,acl,user_xattr 1 1
+UUID=CACC-5D91       /boot/efi            vfat       umask=0002,utf8=true  0 0
+UUID=b847bb47-906f-44f6-8d1b-404b2f8b05bb /home                ext4       defaults              1 2
+/dev/sdb1	/media/datos	ntfs	defaults,user=jalbert	0	0
+
+

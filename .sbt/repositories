@@ -1,0 +1,11 @@
+[repositories]
+
+  local
+
+  my-maven-proxy-releases: https://localhost/repository/maven-public/
+
+  my-maven2-proxy-releases: https://localhost/repository/maven2-public/
+
+  my-maven-spark-group: https://localhost/repository/spark-group/
+
+  my-ivy-proxy-releases: https://localhost/repository/ivy-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]

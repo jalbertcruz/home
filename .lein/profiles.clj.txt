@@ -1,0 +1,72 @@
+{
+
+:repl {:plugins [
+    [cider/cider-nrepl "0.20.0"]
+    [refactor-nrepl "2.4.0"]
+    ]}
+
+:user {
+     :plugins [
+
+     ]
+
+     ;Location of local repository
+      :local-repo "/media/a/data/repo/internet/clojure.m2"
+
+         ;Location of locally installed jars
+         ;(that can't be downloaded from public repo's)
+         
+  :repositories ^:replace [
+           [
+     "local" {:url "/media/a/data/repo/internet/clojure.m2/"
+              :releases {:checksum :ignore}
+             }]
+     
+
+                 ["central-local" "https://localhost/artifactory/central"]
+                 ["spring-plugins-release-local" "https://localhost/artifactory/spring-plugins-release/"]
+                 ["clojars-local" {:url "https://localhost/artifactory/clojars/"
+                              ;; If a repository contains releases only setting
+                              ;; :snapshots to false will speed up dependencies.
+                              :snapshots false
+                              ;; Disable signing releases deployed to this repo.
+                              ;; (Not recommended.)
+                              :sign-releases false
+                              ;; You can also set the policies for how to handle
+                              ;; :checksum failures to :fail, :warn, or :ignore.
+                              :checksum :fail
+                              ;; How often should this repository be checked for
+                              ;; snapshot updates? (:daily, :always, or :never)
+                              :update :always
+                              ;; You can also apply them to releases only:
+                              :releases {:checksum :fail :update :always}}]
+
+                              ]
+   :plugin-repositories 
+   ^:replace 
+   [
+                 ["central-local" "https://localhost/artifactory/central/"]
+                 ["spring-plugins-release-local" "https://localhost/artifactory/spring-plugins-release/"]
+                 ["clojars-local" {:url "https://localhost/artifactory/clojars/"
+                              ;; If a repository contains releases only setting
+                              ;; :snapshots to false will speed up dependencies.
+                              :snapshots false
+                              ;; Disable signing releases deployed to this repo.
+                              ;; (Not recommended.)
+                              :sign-releases false
+                              ;; You can also set the policies for how to handle
+                              ;; :checksum failures to :fail, :warn, or :ignore.
+                              :checksum :fail
+                              ;; How often should this repository be checked for
+                              ;; snapshot updates? (:daily, :always, or :never)
+                              :update :always
+                              ;; You can also apply them to releases only:
+                              :releases {:checksum :fail :update :always}}]
+
+                              ]
+
+
+ }
+
+
+}

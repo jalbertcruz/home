@@ -1,0 +1,4 @@
+the default password for cacerts is 'changeit'
+
+keytool -import -alias artifactory -keystore cacerts -file /home/a/appslnx/web/nginx/cert.pem
+

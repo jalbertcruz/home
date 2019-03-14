@@ -1,0 +1,4 @@
+#! /usr/bin/zsh
+
+locate --ignore-case --database /home/j/src/mlocate1.db "$*"
+locate --ignore-case --database /home/j/src/mlocate2.db "$*"

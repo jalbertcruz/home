@@ -1,0 +1,12 @@
+
+/home/j/.emacs.d/layers/+distributions/spacemacs-base/keybindings.el
+
+p 132
+
+"bW"    'read-only-mode)
+
+/home/j/.emacs.d/layers/+spacemacs/spacemacs-layouts/packages.el
+
+p 79
+
+      (spacemacs/set-leader-keys "bw" 'spacemacs/goto-buffer-workspace)

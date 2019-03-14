@@ -1,0 +1,7 @@
+#! /usr/bin/zsh
+
+#sudo updatedb -o /home/j/src/mlocate1.db -U /home/datos/docs
+#sudo updatedb -o /home/j/src/mlocate2.db -U /home/datos/mdocs
+
+updatedb -f ".git" -l 0 -o /home/j/src/mlocate1.db -U /home/datos/docs
+updatedb -f ".git" -l 0 -o /home/j/src/mlocate2.db -U /home/datos/mdocs

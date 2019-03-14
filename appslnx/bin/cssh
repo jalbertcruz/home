@@ -1,0 +1,4 @@
+#! /usr/bin/zsh
+
+cp -f ~/.private/sshs/$1/* ~/.ssh
+rssha

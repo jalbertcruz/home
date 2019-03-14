@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# modified_files=( $(git diff-files | awk '{print $6}' | ag '^lib|^test') )
+
+git status | ag 'new file:' | awk '{print $3}' | ag '^lib|^test' | xargs git add
+git status | ag 'modified:|deleted:' | awk '{print $2}' | ag '^lib|^test' | xargs git add
+git can
+git ph -f origin $(git branch | ag '^\*'| awk '{print $2}')

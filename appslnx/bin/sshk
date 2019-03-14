@@ -1,0 +1,11 @@
+#! /usr/bin/zsh
+
+for k (/home/j/src/sysadmin/csk/*.pem); do
+	ssh-add $k
+done
+
+for k (/home/j/src/sysadmin/osk/*.pem); do
+	ssh-add $k
+done
+
+#cd /home/j/src/sysadmin/Server-Keys

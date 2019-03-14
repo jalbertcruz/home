@@ -1,0 +1,210 @@
+
+source ~/appslnx/zsh-completions/tmuxinator.zsh
+
+# export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/appslnx/javafx-sdk-11/lib/"
+
+export PATH_TO_FX=$HOME/appslnx/javafx-sdk-11/lib
+
+# export GOOGLE_APPLICATION_CREDENTIALS=/home/a/src/a/dev-speech-analytics/secrets/keys/key_file.json
+# export GOOGLE_APPLICATION_CREDENTIALS=/home/a/src/a/dev-speech-analytics/keys/SmartVoiceOrion-ce9f80d0d882.json
+
+
+# offline - If set to true Hex will not fetch the registry or packages and will instead use locally cached files if they are available. Can be overridden by setting the environment variable HEX_OFFLINE (Default: false)
+# export HEX_OFFLINE=true
+
+# unsafe_https - If set to true Hex will not verify HTTPS certificates. Can be overridden by setting the environment variable HEX_UNSAFE_HTTPS (Default: false)
+export HEX_UNSAFE_HTTPS=true
+
+# api_url - Hex API URL. Can be overridden by setting the environment variable HEX_API_URL
+# (Default: "https://hex.pm/api")
+# export HEX_API_URL=http://172.17.0.2/api
+# export HEX_URL=http://172.17.0.2
+export HEX_HTTP_TIMEOUT=1000
+
+#export HEX_MIRROR=http://172.17.0.2
+
+export DEVPI_SERVERDIR="/media/a/data/repo/pypi/server/"
+export HEX_HOME="/media/a/data/repo/.hex/"
+
+
+export LEIN_JVM_OPTS="-Dmaven.wagon.rto=1800000"
+
+export BOOT_CLOJURE_NAME=org.clojure/clojure
+export BOOT_VERSION=2.8.1
+export BOOT_CLOJURE_VERSION=1.9.0
+export BOOT_HOME=/media/a/data/repo/.boot
+
+export BOOT_LOCAL_REPO=/media/a/data/repo/internet/boot.m2
+
+export BOOT_CLOJARS_REPO="https://localhost/repository/clojars"
+export BOOT_MAVEN_CENTRAL_REPO="https://localhost/repository/maven-public"
+
+export GROOVY_HOME=~/appslnx/groovy
+
+export SBT_OPTS="-Xms1512M -Xmx3024M -Xss200M -XX:MaxMetaspaceSize=2024M"
+
+export SBT_CREDENTIALS="/media/a/data/repo/internet/.credentials"
+
+# export GRADLE_HOME=/home/a/appslnx/build-tools/gradle/
+export GRADLE_USER_HOME=/media/a/data/repo/internet/.gradle
+
+#export COURSIER_CACHE=~/.coursiera
+export COURSIER_CACHE=/media/a/data/repo/internet/.coursier
+#export COURSIER_CACHE=/media/a/data/repo/.coursier
+
+# export JAVA_HOME=~/appslnx/jdk1.8
+export JAVA_HOME=~/appslnx/jdk-11
+
+# export PATH="$PATH:$HOME/appslnx/jdk1.8/bin:$HOME/appslnx/tools/jbake/bin/:/home/a/appslnx/scala/scala-2.12/bin/:$GROOVY_HOME/bin:$HOME/rakudo/bin:$HOME/rakudo/share/perl6/site/bin"
+
+export PATH="$PATH:$HOME/appslnx/jdk-11/bin:$HOME/appslnx/tools/jbake/bin/:/home/a/appslnx/scala/scala-2.12/bin/:$GROOVY_HOME/bin:$HOME/rakudo/bin:$HOME/rakudo/share/perl6/site/bin:/home/a/.mix/escripts"
+
+#export PATH="$PATH:$HOME/appslnx/jdk9/bin/"
+
+#export JDK_HOME=~/appslnx/jdk1.8
+
+
+# export SPRING_HOME=~/appslnx/spring-boot-1/
+# export PATH=$PATH:$SPRING_HOME/bin
+
+export dockerRepositoryOrganization="315432055038.dkr.ecr.us-west-2.amazonaws.com"
+
+#export SPACEMACSDIR=~/tmp/aa/.emacs.d
+
+#export SPACEMACSDIR=~/.emacs.d/
+
+#export PATH="$PATH:/home/j/.kiex/bin/"
+#export PATH="$PATH:/home/j/.kiex/elixirs/elixir-1.3.1/bin/"
+#source $HOME/.kiex/elixirs/elixir-1.3.1.env
+# source $HOME/.kiex/elixirs/elixir-1.7.4.env
+
+# Erlang
+#You can activate this installation running the following command:
+# . /home/a/kerl/21.0/activate
+
+#Later on, you can leave the installation typing:
+#kerl_deactivate
+
+# export KERL_BUILD_DOCS=yes
+# export KERL_CONFIGURE_APPLICATIONS="compiler erts kernel sasl stdlib mnesia odbc os_mon otp_mibs snmp asn1 crypto diameter eldap erl_interface ftp inets jinterface public_key ssh ssl tftp wx xmerl debugger dialyzer et observer parsetools reltool runtime_tools syntax_tools tools common_test eunit edoc erl_docgen hipe"
+# KERL_CONFIGURE_DISABLE_APPLICATIONS="odbc"
+
+# Elixir (kiex)
+# test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+
+# kiex use 1.6.6
+# source $HOME/.kiex/elixirs/elixir-1.6.6.env
+
+
+
+
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
+#export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+export AWS_ACCESS_KEY_ID="***"
+export AWS_SECRET_ACCESS_KEY="***"
+export AWS_DEFAULT_REGION="us-east-1"
+
+#export PATH="$PATH:"
+
+export PATH="$PATH:~/appslnx/rakudo-star-2016.07/install/bin:~/appslnx/rakudo-star-2016.07/install/share/perl6/site/bin"
+
+export PATH=~/appslnx/build-tools/sbt/bin:$PATH
+export PATH=~/appslnx/bin:$PATH
+export PATH=~/.local/bin:$PATH
+# export PATH=~/appslnx/build-tools/maven/bin:$PATH
+
+export PATH=$PATH:~/appslnx/build-tools/gradle/bin
+
+export PATH=$PATH:~/appslnx/db/hadoop/bin
+export PATH=$PATH:~/appslnx/db/spark/bin
+export PATH=$PATH:~/appslnx/hashicorp
+export PATH=$PATH:~/appslnx/julia/bin
+export PATH=$PATH:~/appslnx/google/flutter/bin
+
+#export PATH="/home/j/appslnx/scala/activator/bin:$PATH"
+
+#export PYCHARM_JDK=~/appslnx/jetbrains/pycharm-professional-2017/jre
+#export IDEA_JDK=~/appslnx/jetbrains/itellij-idea-2017/jre64/
+
+
+export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/appslnx/git/p4/bin/"
+
+export PATH=$PATH:/usr/local/git/bin
+
+
+# Ensime
+export ENSIME_SERVER_VERSION=1.0.0
+
+#export LOGIN_REDIRECT_URL='/index'
+
+#export SOCIAL_AUTH_GOOGLE_OAUTH2_KEY='**'
+#export SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET='**'
+
+#export SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY='***'
+#export SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET='***'
+
+#export SOCIAL_AUTH_AZUREAD_OAUTH2_KEY='****'
+#export SOCIAL_AUTH_AZUREAD_OAUTH2_SECRET='*****'
+
+
+
+# export WORKON_HOME=~/appslnx/py/envs/
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+
+# workon blog
+
+source /home/a/.local/bin/virtualenvwrapper.sh
+#source /usr/local/bin/virtualenvwrapper.sh
+
+# export djtplate="/home/datos/docs/P/PLs/Python/Web/Django/templates/cookiecutter-django"
+
+export PATH=$PATH:~/appslnx/google/dart-sdk/bin/
+
+# export PATH=$PATH:~/appslnx/google/google-cloud-sdk/platform/google_appengine/
+
+
+#export PATH=$PATH:/usr/local/git/bin
+
+
+
+
+# Golang
+export GOROOT=$HOME/appslnx/google/go
+export PATH=$PATH:$GOROOT/bin
+export GOPATH=$HOME/appslnx/go/path
+export PATH=$PATH:$GOPATH/bin
+
+# Julia
+export PATH=$PATH:~/appslnx/opt/julia/bin/
+
+# Rust
+export PATH=$PATH:~/appslnx/opt/rust-1/bin/
+
+
+export PATH=~/.rbenv/bin:$PATH:/opt/google/chrome:$HOME/appslnx/cp_prolog/bin/x86_64_linux
+
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+
+# doublecmd
+# export PATH=$PATH:~/appslnx/opt/doublecmd/
+
+#export PATH=$PATH:~/appslnx/jetbrains/pycharm-professional-2016/bin/
+
+#appcfg.py rollback -A oriongs-1369 -V 1 .
+
+# Current working dir
+# cd /home/j/src/pro/oriongs/
+
+export EDITOR=vim
+export VISUAL=vim
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/a/appslnx/google/google-cloud-sdk/path.zsh.inc' ]; then source '/home/a/appslnx/google/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/a/appslnx/google/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/a/appslnx/google/google-cloud-sdk/completion.zsh.inc'; fi

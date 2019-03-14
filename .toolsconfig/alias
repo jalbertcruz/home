@@ -10,16 +10,22 @@ alias tmuxkillall="tmux ls | cut -d : -f 1 | xargs -I {} tmux kill-session -t {}
 
 alias ct="ctags -R --exclude=.git --exclude=node_modules"
 
-alias mda='su -c "setenforce 0"'
+# alias mda='su -c "setenforce 0"'
 
 # Server utils
 alias p3s='python3 -m http.server 8001'
 
 alias emacst='emacsclient --alternate-editor='
 
-alias update='sudo updatedb -U /home/datos -o ~/src/mlocate.db'
+# alias update='sudo updatedb -U /home/datos -o ~/src/mlocate.db'
 
+# alias covpn="sudo openvpn --config ~/j1.ovpn"
+alias cj="sudo update-alternatives --config java"
 
-source ~/.swconfigs/alias-django
-source ~/.swconfigs/alias-gae
-source ~/.swconfigs/alias-cli-searchers
+# alias pypis="workon pypi && devpi-server --start"
+
+# source ~/.toolsconfig/alias-django
+source ~/.toolsconfig/alias-gae
+source ~/.toolsconfig/alias-cli-searchers
+source ~/.toolsconfig/alias-extra
+source ~/.toolsconfig/alias-ssh

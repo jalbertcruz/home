@@ -1,0 +1,10 @@
+127.0.0.1	localhost
+127.0.1.1	jl
+172.17.0.2	ntp.ubuntu.com
+172.17.0.2	logger.foxitcloud.com
+172.17.0.2	mtalk.google.com
+172.17.0.2	az764295.vo.msecnd.net
+172.17.0.2	dc.services.visualstudio.com
+172.17.0.2	vortex.data.microsoft.com
+172.17.0.2	www.jetbrains.com
+172.17.0.2	plugins.jetbrains.com

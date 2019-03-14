@@ -1,0 +1,12 @@
+
+# Orion
+alias svpn="ssh -i /home/a/src/sysadmin/osk/mktorion.pem ubuntu@18.217.230.72"
+alias speech="ssh -i /home/a/src/sysadmin/osk/orionanalytics.pem ubuntu@18.219.118.80 -D 1080"
+
+# alias speecha="ssh -v -i /home/a/src/sysadmin/osk/orion-analytics-key.pem ubuntu@34.232.52.119"
+# alias speecha="ssh -v -i /home/a/src/sysadmin/osk/orion-analytics-key.pem ubuntu@100.26.120.28"
+alias speecha="ssh -v -i /home/a/src/sysadmin/osk/orion-analytics-key.pem ubuntu@54.237.210.129"
+
+
+# scp TODO
+# scp deployment.tar ubuntu@107.23.175.221:/home/ubuntu/staging/deployment.tar

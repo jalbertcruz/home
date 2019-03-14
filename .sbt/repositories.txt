@@ -1,0 +1,12 @@
+[repositories]
+
+  local
+
+  sbt-central: http://localhost:8081/artifactory/central/
+
+  typesafe-maven-releases: http://localhost:8081/artifactory/typesafe-maven-releases/
+
+  typesafe-ivy-releases: http://localhost:8081/artifactory/typesafe-ivy-releases, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
+
+  my-ivy-proxy-releases:  http://localhost:8081/artifactory/sbt-plugin-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
+  my-maven-proxy-releases: http://localhost:8081/artifactory/sbt-plugin-releases/

@@ -6,7 +6,7 @@
     email = jalbertcruz@gmail.com
 
 [push]
-    default = matching
+#    default = matching
     recurseSubmodules = on-demand
 
 [fetch]
@@ -32,11 +32,11 @@
     whitespace = trailing-space,tab-in-indent,tabwidth=4
 
 [pull]
-    rebase = true
+    #rebase = true
     #rebase = preserve
 
 [branch]
-    autoSetupRebase = always
+    #autoSetupRebase = always
 	
 [status]
     submoduleSummary = true
@@ -76,6 +76,7 @@
     l3 = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     sync = !git pull && git push
     es = !git pull --rebase && git push
+    si = !git init && git commit --allow-empty -m 'Initial commit' && git co -b dev
     lf = log --pretty=fuller
     ignorechanges = update-index --assume-unchanged
     noticechanges = update-index --no-assume-unchanged
@@ -155,4 +156,12 @@
     listignored = ls-files --others -i --exclude-standard
     me = !git config --get user.name && git config --get user.email
 
-    sps = !git stash && git pull && git stash pop
+    sps = !git stash && git pull --rebase && git stash pop
+    pa  = !git clean -dff && git checkout -- .
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[rerere]
+	enabled = 1

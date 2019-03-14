@@ -1,0 +1,16 @@
+the default password for cacerts is 'changeit'
+
+keytool -import -alias artifactory -keystore cacerts -file /home/a/Desktop/temp/a/boot-example/cert.pem
+
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes -subj '/CN=localhost'
+
+/home/a/Desktop/temp/a/boot-example/cert.pem
+/home/a/Desktop/temp/a/boot-example/key.pem
+
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes -subj '/CN=localhost'
+keytool -import -alias artifactory -keystore cacerts -file /home/a/Desktop/temp/a/boot-example/cert.pem
+
+
+sudo systemctl restart nginx
+
+
