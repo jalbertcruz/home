@@ -1,0 +1,8 @@
+#!/bin/bash
+
+CURRENT_BRANCH=$(git branch | ag '^\*'| awk '{print $2}')
+
+git co $1
+git pur
+git co $CURRENT_BRANCH
+git rebase $1
