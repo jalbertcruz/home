@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+mix format && mix credo --strict
+
+#git status | ag 'new file:' | awk '{print $3}' | ag '^lib|^test' | xargs mix format
+#git status | ag 'modified:|deleted:' | awk '{print $2}' | ag '^lib|^test' | xargs mix format
+
+#git status | ag 'new file:' | awk '{print $3}' | ag '^lib|^test' | xargs mix credo --strict
+#git status | ag 'modified:|deleted:' | awk '{print $2}' | ag '^lib|^test' | xargs mix credo --strict

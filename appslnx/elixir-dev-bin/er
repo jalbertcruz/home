@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ $1 == 'd' ]; then
+    export MIX_ENV=dev && mix ecto.reset
+elif [ $1 == 't' ]; then
+    export MIX_ENV=test && mix ecto.drop && mix ecto.create && mix ecto.migrate
+fi
