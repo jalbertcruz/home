@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ $1 == 'd' ]; then
-    export MIX_ENV=dev && mix ecto.reset
+    export MIX_ENV=dev && envconsul -prefix sb-common- mix ecto.reset
 elif [ $1 == 't' ]; then
-    export MIX_ENV=test && mix ecto.drop && mix ecto.create && mix ecto.migrate
+    export MIX_ENV=test && envconsul -prefix sb-common- mix ecto.drop && envconsul -prefix sb-common- mix ecto.create && envconsul -prefix sb-common- mix ecto.migrate
 fi
