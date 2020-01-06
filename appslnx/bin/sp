@@ -1,0 +1,12 @@
+#! /usr/bin/zsh
+
+# python3 -m venv .devpi-server-venv
+# python3.7 -m venv .devpi-server-venv
+
+# pip install pip --upgrade
+# pip install setuptools --upgrade
+# pip install devpi-server
+
+source ~/.toolsconfig/.devpi-server-venv/bin/activate
+
+devpi-server --start
