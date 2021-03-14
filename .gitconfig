@@ -1,25 +1,37 @@
 [color]
     ui = auto
 
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+
 [user]
-    name = José Albert Cruz Almaguer
-    email = jalbertcruz@gmail.com
+	name = José Albert Cruz Almaguer
+	email = jalbertcruz@gmail.com
 
 [push]
 #    default = matching
     recurseSubmodules = on-demand
 
 [fetch]
-    prune=1
+    prune = 1
     recurseSubmodules = yes
 
 [merge]
     tool = smartsynchronize
-    ff   = false
+    ff = false
     #conflictstyle = diff3
 
 [mergetool "smartsynchronize"]
-    cmd = ~/appslnx/git/smartsynchronize/bin/smartsynchronize.sh "$LOCAL" "$REMOTE" "$MERGED"
+    cmd = ~/appslnx/git/smartsynchronize/bin/smartsynchronize.sh $LOCAL $REMOTE $MERGED
     trustExitCode = false
 
 [diff]
@@ -27,9 +39,14 @@
     submodule = log
 
 [core]
+    pager = delta
+
     editor = emacs
     autocrlf = input
     whitespace = trailing-space,tab-in-indent,tabwidth=4
+	quotepath = false
+	commitGraph = true
+	excludesFile = ~/src/.gitignore
 
 [pull]
     #rebase = true
@@ -43,6 +60,7 @@
 
 [gc]
     autoDetach = false
+	writeCommitGraph = true
 
 [help]
     format = man
@@ -119,7 +137,7 @@
     slog = log --graph --simplify-by-decoration --all --abbrev-commit --pretty=oneline
     lgso = log --graph --date=short --pretty=format:'%C(yellow)%h%Creset %cn%x09%cd %s%C(green bold)%d'
     ro = !git fetch origin && git reset --hard origin/master
-    shorten = "!sh -c 'curl -i http://git.io -F url=$1' -"
+    shorten = !sh -c 'curl -i http://git.io -F url=$1' -
     pushnotes = !sh -c 'git push $1 refs/notes/*' -
     fetchnotes = !sh -c 'git fetch $1 refs/notes/*:refs/notes/*' -
     showignored = clean -ndX
@@ -139,14 +157,14 @@
     #https://git.wiki.kernel.org/index.php?title=Aliases
     aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
     abbr = "!sh -c 'git rev-list --all | grep ^$1 | while read commit; do git --no-pager log -n1 --pretty=format:\"%H %ci %an %s%n\" $commit; done' -"
-    oneline ="!_() { $(test $# -eq 0 && echo xargs -L1) git log --no-walk --decorate --oneline \"$@\"; }; _"
+    oneline = "!_() { $(test $# -eq 0 && echo xargs -L1) git log --no-walk --decorate --oneline \"$@\"; }; _"
     tips = "!_() { t=$(git rev-list --no-merges --max-count=1 \"$@\"); if test -n \"$t\"; then echo $t; _ \"$@\" ^$t; fi; }; _"
     empty-tree-sha1 = hash-object -t tree /dev/null
-    whitespaceviolations = "!git diff --check $(git empty-tree-sha1)"
-    patchforthis = "!git diff -p $(git empty-tree-sha1)"
+    whitespaceviolations = !git diff --check $(git empty-tree-sha1)
+    patchforthis = !git diff -p $(git empty-tree-sha1)
     tagcontains = git tag -l --contains HEAD
-    cc-cache = "config --global credential.helper 'cache --timeout=300'"
-    cc-off = "config --unset --global credential.helper"
+    cc-cache = config --global credential.helper 'cache --timeout=300'
+    cc-off = config --unset --global credential.helper
     logm = log --stat -M
     logcpy = log --stat -1 -C -C
     nfjsunpushed = log origin/master..master --oneline
@@ -158,11 +176,18 @@
     me = !git config --get user.name && git config --get user.email
 
     sps = !git stash && git pull --rebase && git stash pop
-    pa  = !git clean -dff && git checkout -- .
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    pa = !git clean -dff && git checkout -- .
 [rerere]
 	enabled = 1
+[filesystem "Oracle Corporation|11|/dev/sdb1"]
+	timestampResolution = 181000 nanoseconds
+	minRacyThreshold = 5766 microseconds
+[filesystem "Oracle Corporation|11.0.9|/dev/sdb1"]
+	timestampResolution = 4000 nanoseconds
+	minRacyThreshold = 4589 microseconds
+[filesystem "Amazon.com Inc.|11.0.8|/dev/sdb1"]
+	timestampResolution = 6000 nanoseconds
+	minRacyThreshold = 7401 microseconds
+[filesystem "Amazon.com Inc.|11.0.9.1|/dev/sdb1"]
+	timestampResolution = 9000 nanoseconds
+	minRacyThreshold = 6552 microseconds
