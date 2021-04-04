@@ -1,0 +1,10 @@
+set surround
+set easymotion
+set argtextobj
+set exchange
+set textobj-entire
+
+set ReplaceWithRegister
+
+set number relativenumber
+set clipboard+=unnamed

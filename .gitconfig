@@ -179,15 +179,5 @@
     pa = !git clean -dff && git checkout -- .
 [rerere]
 	enabled = 1
-[filesystem "Oracle Corporation|11|/dev/sdb1"]
-	timestampResolution = 181000 nanoseconds
-	minRacyThreshold = 5766 microseconds
-[filesystem "Oracle Corporation|11.0.9|/dev/sdb1"]
-	timestampResolution = 4000 nanoseconds
-	minRacyThreshold = 4589 microseconds
-[filesystem "Amazon.com Inc.|11.0.8|/dev/sdb1"]
-	timestampResolution = 6000 nanoseconds
-	minRacyThreshold = 7401 microseconds
-[filesystem "Amazon.com Inc.|11.0.9.1|/dev/sdb1"]
-	timestampResolution = 9000 nanoseconds
-	minRacyThreshold = 6552 microseconds
+[init]
+	defaultBranch = master

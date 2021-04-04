@@ -1,0 +1,5 @@
+#!/bin/bash
+
+id=$(nomad job status -evals $1 | tail -n 1 | awk '{print $1}')
+cmd="${2:-/bin/bash}"
+nomad alloc exec $id $cmd
