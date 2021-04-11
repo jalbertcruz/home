@@ -101,7 +101,7 @@
     noticechanges = update-index --no-assume-unchanged
     gc-ap = gc --aggressive --prune
     listconf = config --global --list
-    cam = commit -a -m
+    cam = commit -a --amend --no-edit
     cm = commit -m
     can = commit --amend --no-edit
     lsm = log -M --stat
