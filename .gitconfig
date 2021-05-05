@@ -23,7 +23,7 @@
 
 [fetch]
     prune = 1
-    recurseSubmodules = yes
+    recurseSubmodules = no
 
 [merge]
     tool = smartsynchronize
@@ -44,9 +44,9 @@
     editor = emacs
     autocrlf = input
     whitespace = trailing-space,tab-in-indent,tabwidth=4
-	quotepath = false
-	commitGraph = true
-	excludesFile = ~/src/.gitignore
+    quotepath = false
+    commitGraph = true
+    excludesFile = ~/src/.gitignore
 
 [pull]
     #rebase = true
@@ -177,6 +177,8 @@
 
     sps = !git stash && git pull --rebase && git stash pop
     pa = !git clean -dff && git checkout -- .
+    su = submodule update --recursive --remote
+    sinit = submodule update --init --recursive
 [rerere]
 	enabled = 1
 [init]
