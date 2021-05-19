@@ -48,6 +48,12 @@
     commitGraph = true
     excludesFile = ~/src/.gitignore
 
+    sparseCheckout = true
+    sparseCheckoutCone = true
+
+[index]
+    sparse = true
+
 [pull]
     #rebase = true
     #rebase = preserve
@@ -179,6 +185,7 @@
     pa = !git clean -dff && git checkout -- .
     su = submodule update --recursive --remote
     sinit = submodule update --init --recursive
+    rup = remote update --prune
 [rerere]
 	enabled = 1
 [init]

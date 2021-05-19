@@ -1,10 +1,30 @@
-set surround
-set easymotion
-set argtextobj
-set exchange
-set textobj-entire
+""" Map leader to space ---------------------
+let mapleader=","
 
+""" Plugins  --------------------------------
+set surround
+set multiple-cursors
+set commentary
+""" set argtextobj
+set easymotion
+set textobj-entire
 set ReplaceWithRegister
 
+""" Plugin settings -------------------------
+""" let g:argtextobj_pairs="[:],(:),<:>"
+
+set showmode
+set so=5
+set incsearch
+set nu
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideaput
+set ideastatusicon=gray
+set idearefactormode=keep
 set number relativenumber
 set clipboard+=unnamed
+
+set ideamarks
+
