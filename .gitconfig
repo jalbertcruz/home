@@ -179,6 +179,7 @@
     pa = !git clean -dff && git checkout -- .
     su = submodule update --recursive --remote
     sinit = submodule update --init --recursive
+    rup = remote update --prune
 [rerere]
 	enabled = 1
 [init]
