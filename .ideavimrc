@@ -1,4 +1,4 @@
-""" Map leader to space ---------------------
+""" Map leader to space ----------------------
 let mapleader=","
 
 """ Plugins  ---------------------------------
