@@ -1,7 +1,7 @@
 """ Map leader to space ---------------------
 let mapleader=","
 
-""" Plugins  --------------------------------
+""" Plugins  ---------------------------------
 set surround
 set multiple-cursors
 set commentary
