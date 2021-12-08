@@ -13,9 +13,16 @@
     file-style = bold yellow ul
     file-decoration-style = none
 
+[gpg]
+    format = ssh
+
+[gpg "ssh"]
+    allowedSignersFile = /home/a/.ssh/git/allowed_signers
+
 [user]
-	name = José Albert Cruz Almaguer
-	email = jalbertcruz@gmail.com
+    name = José Albert Cruz Almaguer
+    email = jalbertcruz@gmail.com
+    signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJsr6U9NJi8s+IPQMpeQef4IZ14F9fatir6OgH85ghW1 jalbertcruz@gmail.com
 
 [push]
 #    default = matching
@@ -70,6 +77,10 @@
 
 [help]
     format = man
+    autoCorrect = prompt
+
+[submodule]
+    stickyRecursiveClone = true
 
 [alias]
     br = branch -a
